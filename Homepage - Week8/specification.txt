@@ -1,0 +1,10 @@
+--- HTML TAGS USED ---
+Used 15+ distinct HTML tags across the site to structure content cleanly:
+<html>, <head>, <title>, <body>, <header>, <nav>, <main>, <section>, <div>, <h1>, <h2>, <p>, <ul>, <ol>, <li>, <a>, <button>, <footer>
+
+--- JAVASCRIPT IMPLEMENTATION ---
+Implemented a dynamic toggle button to switch the site styling between Light Mode and Dark Mode, manipulating classes on the document body.
+
+--- BOOTSTRAP IMPLEMENTATION ---
+- Heroes: Utilized a prominent, clean layout structure to present the main introduction banner.
+- Features: Built a responsive layout grid to highlight different categories of ongoing activities and skills.

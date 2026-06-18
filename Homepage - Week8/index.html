@@ -1,0 +1,132 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <link href="styles.css" rel="stylesheet" />
+    <title>Romit's Webpage</title>
+  </head>
+  <body>
+    <header>
+      <h1>Romit S</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="now.html">/Now</a></li>
+        </ul>
+      </nav>
+      <button onclick="runDarkness()">Darkness</button>
+    </header>
+    <main>
+      <section>
+        <div class="container col-xxl-8 px-4 py-5">
+          <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/6/65/20180610_FIFA_Friendly_Match_Austria_vs._Brazil_Neymar_850_1705.jpg"
+                class="d-block mx-lg-auto img-fluid circle-photo"
+                alt="Bootstrap Themes"
+                width="300"
+                height="300"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-lg-6">
+              <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
+                Hi! I'm Romit R. Shende
+              </h1>
+              <p class="lead">
+                Currently pursuing Data Science, specializing in turning complex
+                datasets into actionable insights while building clean,
+                responsive web applications. Constantly learning, evolving, and
+                scaling technical skills—from database architecture to data
+                analytics. Proud contributor to the Guinness World Record for
+                the largest online photo album of people reading books, hosted
+                by Savitribai Phule Pune University.
+              </p>
+              <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <a href="./about.html">
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-lg px-4 me-md-2"
+                  >
+                    Read my story ->
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container px-4 py-5" id="featured-3">
+          <h2 class="pb-2 border-bottom">Technologies</h2>
+          <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+            <div class="feature col">
+              <div
+                class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3"
+              >
+                <svg class="bi" width="1em" height="1em" aria-hidden="true">
+                  <use xlink:href="#collection"></use>
+                </svg>
+              </div>
+              <h3 class="fs-2 text-body-emphasis">C/C++</h3>
+              <p>
+                Paragraph of text beneath the heading to explain the heading.
+                We'll add onto it with another sentence and probably just keep
+                going until we run out of words.
+              </p>
+            </div>
+            <div class="feature col">
+              <div
+                class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3"
+              >
+                <svg class="bi" width="1em" height="1em" aria-hidden="true">
+                  <use xlink:href="#people-circle"></use>
+                </svg>
+              </div>
+              <h3 class="fs-2 text-body-emphasis">SQL</h3>
+              <p>
+                Paragraph of text beneath the heading to explain the heading.
+                We'll add onto it with another sentence and probably just keep
+                going until we run out of words.
+              </p>
+            </div>
+            <div class="feature col">
+              <div
+                class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3"
+              >
+                <svg class="bi" width="1em" height="1em" aria-hidden="true">
+                  <use xlink:href="#toggles2"></use>
+                </svg>
+              </div>
+              <h3 class="fs-2 text-body-emphasis">Python</h3>
+              <p>
+                Paragraph of text beneath the heading to explain the heading.
+                We'll add onto it with another sentence and probably just keep
+                going until we run out of words.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>Copyright - Romit S. 2026</footer>
+    <script>
+        function runDarkness() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+}
+    </script>
+  </body>
+</html>

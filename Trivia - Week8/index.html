@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function() {
+
+                // Part 1: Multiple Choice Logic
+                // Changed selector to '.mc-option' to match your HTML buttons
+                let mcButtons = document.querySelectorAll('.mc-option');
+                let mcFeedback = document.querySelector('#mc-feedback');
+
+                mcButtons.forEach(function(button) {
+                    button.addEventListener('click', function() {
+                        // Reset all buttons in this section first
+                        mcButtons.forEach(btn => {
+                            btn.style.backgroundColor = '#d9edfd'; // Reset to default blue
+                            btn.style.color = '#212529';
+                        });
+
+                        // Check if the clicked button is the correct answer
+                        if (button.dataset.correct === "true") {
+                            button.style.backgroundColor = '#28a745'; // Green
+                            button.style.color = '#ffffff';
+                            mcFeedback.innerHTML = 'Correct!';
+                            mcFeedback.style.color = '#28a745';
+                        } else {
+                            button.style.backgroundColor = '#dc3545'; // Red
+                            button.style.color = '#ffffff';
+                            mcFeedback.innerHTML = 'Incorrect';
+                            mcFeedback.style.color = '#dc3545';
+                        }
+                    });
+                });
+
+                // Part 2: Free Response Logic
+                // Changed selectors to match your HTML input and button IDs
+                let frSubmit = document.querySelector('#submit-fr');
+                let frInput = document.querySelector('#fr-answer');
+                let frFeedback = document.querySelector('#fr-feedback');
+
+                frSubmit.addEventListener('click', function() {
+                    // Sanitize user input (lowercase and trim whitespace)
+                    let userAnswer = frInput.value.trim().toLowerCase();
+                    let correctAnswer = "tokyo";
+
+                    if (userAnswer === correctAnswer) {
+                        frInput.style.backgroundColor = '#28a745'; // Green
+                        frInput.style.color = '#ffffff';
+                        frFeedback.innerHTML = 'Correct!';
+                        frFeedback.style.color = '#28a745';
+                    } else {
+                        frInput.style.backgroundColor = '#dc3545'; // Red
+                        frInput.style.color = '#ffffff';
+                        frFeedback.innerHTML = 'Incorrect';
+                        frFeedback.style.color = '#dc3545';
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                 <p>What is the approximate lifespan of a taste bud?</p>
+                <button class="mc-option" data-correct="false">10 hours</button>
+                <button class="mc-option" data-correct="true">10 days</button>
+                <button class="mc-option" data-correct="false">10 weeks</button>
+                <button class="mc-option" data-correct="false">10 months</button>
+                <div id="mc-feedback" class="feedback"></div>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                 <p>What is the capital city of Japan?</p>
+                <input type="text" id="fr-answer" placeholder="Type your answer here...">
+                <button id="submit-fr">Submit</button>
+                <div id="fr-feedback" class="feedback"></div>
+            </div>
+        </div>
+    </body>
+</html>
