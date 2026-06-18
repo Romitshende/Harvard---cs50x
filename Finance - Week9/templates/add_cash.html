@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Cash
+{% endblock %}
+
+{% block main %}
+    <div class="mb-4">
+        <h2>Deposit Simulated Cash</h2>
+        <p class="text-muted">Need more buying power? Top up your trading account balance below.</p>
+    </div>
+
+    <form action="/add_cash" method="post">
+        <div class="mb-3">
+            <div class="input-group mx-auto w-auto" style="max-width: 300px;">
+                <span class="input-group-text">$</span>
+                <input autofocus class="form-control" name="amount" placeholder="Amount (e.g., 5000)" type="number" min="1" max="100000" required>
+                <span class="input-group-text">.00</span>
+            </div>
+        </div>
+        <button class="btn btn-success" type="submit">Deposit Funds</button>
+    </form>
+{% endblock %}
