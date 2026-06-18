@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnalyticsDash — Insight Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-surface: #ffffff;
+            --bg-body: #f8faf9; /* Soft pale grey-green background */
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+            --brand-primary: #15803d; /* Calming Sage / Forest Green */
+            --brand-secondary: #0f766e; /* Soft Teal Accent */
+            --brand-light: #f0fdf4;
+        }
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .navbar-premium {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .navbar-brand-text {
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+        .card-premium {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+        }
+        .btn-premium {
+            border-radius: 10px;
+            font-weight: 600;
+            padding: 0.6rem 1.2rem;
+            transition: all 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-premium sticky-top py-3">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="/">
+                <span class="fs-4">🌱</span>
+                <span class="navbar-brand-text fs-4">AnalyticsDash</span>
+            </a>
+            <div class="ms-auto d-flex align-items-center gap-3">
+                <span class="badge bg-white text-secondary border border-light-subtle px-3 py-2 rounded-pill fw-medium">Workspace Engine</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-warning alert-dismissible border-0 shadow-sm fade show rounded-3 p-3" role="alert">
+                        <div class="d-flex align-items-center gap-2">
+                            <span>⚠️</span>
+                            <div class="fw-medium text-dark small">{{ message }}</div>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <main class="container my-4">
+        {% block main %}{% endblock %}
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
